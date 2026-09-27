@@ -4,61 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reformas Sergio Ruiz Silva</title>
-
+    <title>Reformas Sergio Ruiz Silva | Reformas en Galicia</title>
+    <meta name="description" content="Reformas Sergio Ruiz Silva. Reformas, pintura, baños, cocinas y trabajos de construcción en Galicia.">
+    <meta name="keywords" content="reformas, reformas en Galicia, pintura, baños, cocinas, reformas integrales, construcción">
     <style>
         * {
             box-sizing: border-box;
         }
 
+        html {
+    height: 100%;
+    }
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #1f2937;
-            background: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #111827;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
         }
-
         header {
-            height: 80px;
-            padding: 0 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        }
+    height: 72px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111827;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 10;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #111827;
-        }
+.logo {
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.3px;
+}
 
-        nav a {
-            margin-left: 30px;
-            color: #374151;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+nav a {
+    margin-left: 35px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
 
-        nav a:hover {
-            color: #2563eb;
-        }
+nav a:hover {
+    opacity: 0.7;
+}
 
         .hero {
-            min-height: 75vh;
-            padding: 80px 7%;
-            display: flex;
-            align-items: center;
-            background: #111827;
-            color: white;
-        }
+    min-height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 7%;
+    color: white;
+    overflow: hidden;
+}
 
-        .hero-contenido {
-            max-width: 750px;
-        }
+.hero-fondo {
+    position: absolute;
+    inset: 0;
+    background-image: url("fotos/portada1.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.hero-fondo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.32);
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+}
 
         .hero-logo {
             margin-left: -80px;
@@ -78,10 +106,12 @@
         }
 
         .hero h1 {
-            font-size: 64px;
-            line-height: 1.05;
-            margin: 20px 0;
-        }
+    font-size: 58px;
+    line-height: 1.1;
+    margin: 20px 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
 
         .hero p {
             font-size: 20px;
@@ -105,9 +135,13 @@
         }
 
         .boton-principal {
-            background: #f59e0b;
-            color: #111827;
-        }
+    background: #f59e0b;
+    color: #111827;
+    padding: 15px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
         .boton-secundario {
             border: 1px solid #9ca3af;
@@ -133,93 +167,146 @@
             margin-bottom: 15px;
             font-weight: 700;
         }
-        .sobre-nosotros {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 60px;
-            margin: 0 7% 80px;
-            text-align: center;
-        }
+      .sobre-nosotros {
+    position: relative;
+    padding: 100px 7%;
+    margin: 0;
+    text-align: center;
+    color: #000000;
+    background-image: url("fotos/sobrensotrosfond.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
 
-        .sobre-nosotros p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #4b5563;
-        }
+.sobre-nosotros::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.45);
+}
 
-        .sobre-nosotros h2::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #f59e0b;
-            margin: 15px auto 0;
-            border-radius: 5px;
-        }
+.sobre-nosotros > * {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-nosotros p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #000000;
+}
+
+.sobre-nosotros h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #f59e0b;
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
 
         .titulo-seccion p {
-            color: #6b7280;
+            color: #000000;
         }
 
         .servicios {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .servicio {
-            padding: 30px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: white;
-            text-decoration: none;
-            color: #1f2937;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .servicio:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-        .servicio span {
-            font-size: 35px;
-        }
 
-        .servicio h3 {
-            font-size: 22px;
-        }
+.servicio {
+    display: block;
+    text-decoration: none;
+    color: #111827;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
 
-        .servicio p {
-            color: #6b7280;
-            line-height: 1.6;
-        }
+.servicio:hover {
+    transform: translateY(-8px);
+}
 
-        .contacto {
-            background: #f3f4f6;
-            text-align: center;
-        }
+.servicio img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 22px;
+}
 
-        .contacto h2 {
-            font-size: 40px;
-        }
+.servicio h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+       .contacto {
+    background: #f8fafc;
+    padding: 90px 7%;
+    text-align: center;
+    margin: 0;
+}
+
+       .contacto h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-size: 17px;
+    color: #111111;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
         footer {
             padding: 30px;
             text-align: center;
             background: #111827;
             color: #9ca3af;
+            margin-top: auto;
         }
 
-        .telefono {
-            font-size: 20px;
-            font-weight: bold;
-            color: #111827;
-            margin: 20px 0;
-        }
+       .telefono {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000000;
+    margin: 25px 0;
+}
+        main {
+            flex: 1;
+        }  
 
-        @media (max-width: 800px) {
+        .whatsapp-fijo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
+}
+
+.whatsapp-fijo img {
+    width: 32px;
+    height: 32px;
+}
+        @media (max-width: 700px) {
 
             header {
                 height: auto;
@@ -243,85 +330,88 @@
             .servicios {
                 grid-template-columns: 1fr;
             }
-        }
+            }
 
-             .galeria {
+            .galeria {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
                 max-width: 1100px;
                 margin: 40px auto;
-        }
+            }
 
-             .foto {
+            .foto {
                 width: 100%;
                 height: 300px;
                 overflow: hidden;
                 border-radius: 10px;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                 transition: transform 0.3s ease;
-        }
+            }   
 
-             .foto:hover {
+            .foto:hover {
                 transform: scale(1.03);
-        }
+            }
 
-             .foto img {
+            .foto img {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
                 background-color: #f5f5f5;
                 display: block;
-        }
+            }
+        @media (max-width: 700px) {
+            
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 20px;
+            }
 
-        .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 20px;
-}
+            .hero-logo {
+                margin: 0 0 30px 0;
+            }
 
-.hero-logo {
-    margin: 0 0 30px 0;
-}
+            .hero-logo img {
+               width: 300px;
+               max-width: 90vw;
+               height: auto;
+            }
 
-.hero-logo img {
-    width: 300px;
-    max-width: 90vw;
-    height: auto;
-}
+            .hero-contenido {
+               max-width: 100%;
+            }
 
-.hero-contenido {
-    max-width: 100%;
-}
+            .hero h1 {
+               font-size: 42px;
+            }
 
-.hero h1 {
-    font-size: 42px;
-}
+            .whatsapp-fijo {
+               width: 55px;
+               height: 55px;
+               right: 15px;
+               bottom: 15px;
+            }
 
-.whatsapp-fijo {
-    width: 55px;
-    height: 55px;
-    right: 15px;
-    bottom: 15px;
-}
+            .whatsapp-fijo img {
+               width: 30px !important;
+               height: 30px !important;
+            }
 
-.whatsapp-fijo img {
-    width: 30px !important;
-    height: 30px !important;
-}
+             header {
+               padding: 0 20px;
+            }
 
-header {
-    padding: 0 20px;
-}
+            .logo {
+               font-size: 18px;
+            }
 
-.logo {
-    font-size: 18px;
-}
+            nav a {
+               margin-left: 10px;
+               font-size: 14px;
+            }
 
-nav a {
-    margin-left: 10px;
-    font-size: 14px;
-}
+            }
 @media (max-width: 700px) {
              .galeria {
                 grid-template-columns: 1fr;
@@ -337,7 +427,7 @@ nav a {
 
     </style>
 </head>
-
+    <link rel="icon" type="image/jpeg" href="fotos/logo rs.jpeg">
 <body>
 
     <header>
@@ -359,39 +449,35 @@ nav a {
 
        <section class="hero" id="inicio">
 
-        <div class="hero-logo">
-        <img src="fotos/logo rs.jpeg" alt="Sergio Ruiz Reformas en General">
-        </div>
+    <div class="hero-fondo"></div>
 
     <div class="hero-contenido">
-                <div class="etiqueta">
-                    Reformas y construcción
-                </div>
+        <div class="etiqueta">
+            REFORMAS Y CONSTRUCCIÓN
+        </div>
 
-                <h1>
-                    Transformamos espacios.
-                </h1>
+        <h1>
+            Reformas que<br>
+            transforman espacios.
+        </h1>
 
-                <p>
-                    Reformas para viviendas y espacios profesionales,
-                    cuidando cada detalle del proyecto.
-                </p>
+        <p>
+            Reformas para viviendas y espacios profesionales,
+            cuidando cada detalle del proyecto.
+        </p>
 
-                <div class="botones">
+        <div class="botones">
+            <a href="#servicios" class="boton boton-principal">
+                Ver nuestros trabajos
+            </a>
 
-                    <a href="#contacto" class="boton boton-principal">
-                        Solicitar presupuesto
-                    </a>
+            <a href="#contacto" class="boton boton-secundario">
+                Solicitar presupuesto
+            </a>
+        </div>
+    </div>
 
-                    <a href="#servicios" class="boton boton-secundario">
-                        Ver servicios
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
+</section>
 
 
         <section class="seccion" id="servicios">
@@ -401,7 +487,9 @@ nav a {
                 <h2>Nuestros servicios</h2>
 
                 <p>
-                    Soluciones para renovar y mejorar tus espacios.
+                    Soluciones para renovar y mejorar tus espacios.<br> 
+                    Elige entre nuestros servicios de reformas que te interesa ver.<br>
+                    Haz clic en cada sección para ver ejemplos de trabajos realizados.
                 </p>
 
             </div>
@@ -409,35 +497,30 @@ nav a {
 
            <div class="servicios">
 
-    <a href="#pintura" class="servicio">
-        <span>🎨</span>
-        <h3>Pintura</h3>
-        <p>Ver trabajos de pintura realizados.</p>
+    <a href="pintura.html" class="servicio">
+       <img src="fotos/pinturaport2.jpg" alt="Trabajos de pintura">
+<h3>Pintura</h3>
     </a>
 
     <a href="#banos" class="servicio">
-        <span>🚿</span>
-        <h3>Baños</h3>
-        <p>Ver trabajos de baños realizados.</p>
-    </a>
+    <img src="fotos/baño2.jpeg" alt="Reformas de baños">
+    <h3>Baños</h3>
+</a>
 
-    <a href="#cocinas" class="servicio">
-        <span>🍳</span>
-        <h3>Cocinas</h3>
-        <p>Ver trabajos de cocinas realizados.</p>
-    </a>
+    <a href="cocinas.html" class="servicio">
+    <img src="fotos/cocinaport.png" alt="Reformas de cocinas">
+    <h3>Cocinas</h3>
+</a>
 
-    <a href="#reformas integrales" class="servicio">
-        <span>🏠</span>
-        <h3>Reformas integrales</h3>
-        <p>Ver reformas integrales realizadas.</p>
-    </a>
+    <a href="integrales.html" class="servicio">
+    <img src="fotos/integralport.jpg" alt="Reformas integrales">
+    <h3>Reformas integrales</h3>
+</a>
 
-    <a href="#otro tipo" class="servicio">
-        <span>🔨</span>
-        <h3>Otros trabajos</h3>
-        <p>Ver otro tipo realizados.</p>
-    </a>
+    <a href="otros.html" class="servicio">
+    <img src="fotos/WhatsApp Image 2026-09-27 at 02.34.49.jpeg" alt="Otros trabajos">
+    <h3>Otros trabajos</h3>
+</a>
 
 </div>
             </div>
@@ -481,146 +564,11 @@ nav a {
     </a>
 
         </section>
-<section class="seccion" id="pintura">
 
-    <div class="titulo-seccion">
-        <h2>Trabajos de pintura</h2>
-        <p>Algunos de nuestros trabajos realizados.</p>
-    </div>
 
-    <div class="galeria">
 
-    <div class="foto">
-        <img src="fotos/pintura1.jpeg" alt="Reforma de pintura">
-    </div>
 
-    <div class="foto">
-        <img src="fotos/pintura2.jpeg" alt="Reforma de pintura">
-    </div>
 
-    <div class="foto">
-        <img src="fotos/pintura3.jpeg" alt="Reforma de pintura">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/pintura4.jpeg" alt="Reforma de pintura">
-    </div>
-
-</div>
-
-</section>
-<section class="seccion" id="banos">
-
-    <div class="titulo-seccion">
-        <h2>Trabajos de baños</h2>
-        <p>Algunos de nuestros trabajos realizados.</p>
-    </div>
-
-    <div class="galeria">
-
-    <div class="foto">
-        <img src="fotos/baño1.jpeg" alt="Reforma de baño">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/baño2.jpeg" alt="Reforma de baño">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/baño3.jpeg" alt="Reforma de baño">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/baño4.jpeg" alt="Reforma de baño">
-    </div>
-
-</div>
-
-</section>
-<section class="seccion" id="cocinas">
-
-    <div class="titulo-seccion">
-        <h2>Trabajos de cocinas</h2>
-        <p>Algunos de nuestros trabajos realizados.</p>
-    </div>
-
-   <div class="galeria">
-
-    <div class="foto">
-        <img src="fotos/cocina1.jpeg" alt="Reforma de cocinas">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/cocina2.jpeg" alt="Reforma de cocinas">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/cocina3.jpeg" alt="Reforma de cocinas">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/cocina4.jpeg" alt="Reforma de cocinas">
-    </div>
-
-</div>
-
-</section>
-<section class="seccion" id="reformas integrales">
-
-    <div class="titulo-seccion">
-        <h2>Trabajos de reformas integrales</h2>
-        <p>Algunos de nuestros trabajos realizados.</p>
-    </div>
-
-   <div class="galeria">
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.31.40.jpeg" alt="Reforma de Reformas">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.31.41 (1).jpeg" alt="Reforma de Reformas">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.31.41 (2).jpeg" alt="Reforma de Reformas">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.31.41.jpeg" alt="Reforma de Reformas">
-    </div>
-
-</div>
-
-</section>
-<section class="seccion" id="otros trabajos">
-
-    <div class="titulo-seccion">
-        <h2>Trabajos de otro tipo</h2>
-        <p>Algunos de nuestros trabajos realizados.</p>
-    </div>
-
-   <div class="galeria">
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.34.49 (1).jpeg" alt="Reforma de otros">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.34.49 (2).jpeg" alt="Reforma de otros">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.34.49.jpeg" alt="Reforma de otros">
-    </div>
-
-    <div class="foto">
-        <img src="fotos/WhatsApp Image 2026-09-27 at 02.34.50.jpeg" alt="Reforma de otros">
-    </div>
-
-</div>
-
-</section>
     </main>
 
 
