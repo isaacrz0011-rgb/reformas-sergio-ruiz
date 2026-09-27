@@ -71,10 +71,8 @@ nav a:hover {
 .hero-fondo {
     position: absolute;
     inset: 0;
-    background-image: url("fotos/portadasi.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #111827;
+   background-image: url("fotos/portadasi.png");
+    background-size: cover;
     background-position: center 0%;
     z-index: 0;
 }
@@ -416,6 +414,8 @@ nav a:hover {
                 background-color: #f5f5f5;
                 display: block;
             }
+
+
         @media (max-width: 700px) {
             
             .hero {
@@ -480,6 +480,14 @@ nav a:hover {
         }
 
         }
+ 
+ @media (max-width: 800px) {
+    .hero-fondo {
+        background-image: url("fotos/portada-movil.png");
+        background-size: cover;
+        background-position: center;
+    }
+        }       
 
     </style>
 </head>
